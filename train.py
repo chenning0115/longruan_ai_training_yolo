@@ -25,8 +25,9 @@ import time
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
-from contrib.taskdb import task_db_handler
 
+from contrib.taskdb import task_db_handler
+from contrib.manage_stategy import CODE_CHECK_SUCCESS
 try:
     import comet_ml  # must be imported before torch (if installed)
 except ImportError:
@@ -650,3 +651,4 @@ def run(**kwargs):
 if __name__ == '__main__':
     opt = parse_opt()
     main(opt)
+    LOGGER.info("%s" % CODE_CHECK_SUCCESS)
